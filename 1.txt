@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 bbbb
+=======
+abcd
+>>>>>>> feature
