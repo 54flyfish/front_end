@@ -25,11 +25,30 @@
       background-color: blue;
       z-index: 99;
     }
+    a{
+      position: relative;
+      left: 50px;
+    }
+    a::before{
+      position: absolute;
+      content: '';
+      width: 30px;
+      height: 30px;
+      border: 2px solid rgba(0, 0, 0, 0.2);
+    }
+    a::after{
+      position: absolute;
+      content: '';
+      width: 30px;
+      height: 30px;
+      border: 2px solid rgba(0, 0, 0, 0.2);
+    }
   </style>
 </head>
 <body>
   <div id="box1"></div>
   <div id="box2"></div>
   <div id="box3"></div>
+  <a href="#">ssss</a>
 </body>
 </html>
