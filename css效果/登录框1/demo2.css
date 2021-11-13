@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgreen;
+}
+body .container {
+  background-color: dodgerblue;
+  padding: 20px 30px;
+  width: 300px;
+  height: 360px;
+}
+body .container h2,
+body .container .frame input,
+body .container p {
+  box-sizing: border-box;
+}
+body .container h2 {
+  text-align: center;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 60px;
+}
+body .container .frame {
+  margin-top: 50px;
+  position: relative;
+}
+body .container .frame input {
+  display: block;
+  width: 100%;
+  padding: 10px 8px;
+  border: 0;
+  background: none;
+  border-bottom: 2px solid white;
+  transition: all 0.4s linear;
+  outline: none;
+  font-size: 20px;
+}
+body .container .frame input:focus {
+  border-bottom: 2px solid red;
+}
+body .container .frame input:valid {
+  border-bottom: 2px solid red;
+}
+body .container .frame label {
+  color: white;
+  font-size: 22px;
+  position: absolute;
+  bottom: 10px;
+}
+body .container .frame label span {
+  display: inline-block;
+  transition: all 0.4s cubic-bezier(0.57, -1.01, 0.23, 1.87);
+}
+body .container .frame input:focus + label span,
+body .container .frame input:valid + label span {
+  transform: translateY(-25px);
+}
+body .container input[type="submit"] {
+  width: 100%;
+  background-color: lightgrey;
+  margin-top: 30px;
+  border: 0;
+  padding: 5px;
+}
+body .container input[type="submit"]:active {
+  transform: scale(0.96);
+}
+body .container p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: white;
+}
+body .container p a {
+  text-decoration: none;
+  color: lightgreen;
+}

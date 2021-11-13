@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>计算器</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(45deg, red, blue);
+    }
+
+
+
+    form input {
+      margin-left: 6px;
+      width: 226px;
+      font-size: 30px;
+      outline: none;
+      border: none;
+      margin-bottom: 6px;
+    }
+
+    .btn {
+      font-size: 30px;
+      box-sizing: border-box;
+      /* border: 2px solid rgba(0, 0, 0, .5); */
+      width: 50px;
+      height: 50px;
+      padding: 5px 10px;
+      margin: 3px;
+      color: white;
+      background-color: #544e4f;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="calculate">
+    <form action="">
+      <input id="textView" name="textView" type="text">
+    </form>
+    <table class="area">
+      <tr>
+        <td>
+          <div class="btn" onclick="clean()">c</div>
+        </td>
+        <td>
+          <div class="btn" onclick="back()">&lt;</div>
+        </td>
+        <td>
+          <div class="btn" onclick="insert('+')">+</div>
+        </td>
+        <td>
+          <div class="btn" onclick="insert('-')">-</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="btn" onclick="insert(7)">7</div>
+        </td>
+        <td>
+          <div class="btn" onclick="insert(8)">8</div>
+        </td>
+        <td>
+          <div class="btn" onclick="insert(9)">9</div>
+        </td>
+        <td>
+          <div class="btn" onclick="insert('*')">*</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="btn" onclick="insert(4)">4</div>
+        </td>
+        <td>
+          <div class="btn" onclick="insert(5)">5</div>
+        </td>
+        <td>
+          <div class="btn" onclick="insert(6)">6</div>
+        </td>
+        <td>
+          <div class="btn" onclick="insert('/')">/</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="btn" onclick="insert(1)">1</div>
+        </td>
+        <td>
+          <div class="btn" onclick="insert(2)">2</div>
+        </td>
+        <td>
+          <div class="btn" onclick="insert(3)">3</div>
+        </td>
+        <td>
+          <div class="btn" onclick="insert('%')">%</div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div class="btn" style="width: 110px;">0</div>
+        </td>
+        <td>
+          <div class="btn" onclick="insert('.')">.</div>
+        </td>
+        <td>
+          <div class="btn" onclick="equal()">=</div>
+        </td>
+      </tr>
+    </table>
+    <script>
+      function insert(value) {
+        document.getElementById('textView').value = document.getElementById('textView').value + value;
+      }
+      function clean() {
+        document.getElementById('textView').value = '';
+      }
+      function back() {
+        let str = document.getElementById('textView').value;
+        document.getElementById('textView').value = str.slice(0, str.length - 1)
+      }
+      function equal() {
+        document.getElementById('textView').value = eval(document.getElementById('textView').value)
+      }
+    </script>
+  </div>
+</body>
+
+</html>

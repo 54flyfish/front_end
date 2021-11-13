@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>旋转画廊</title>
+  <link rel="stylesheet" href="./demo.css">
+</head>
+
+<body>
+  <div class="box">
+    <div class="photo" style="--v:1"><img src="./1.jpg" alt=""></div>
+    <div class="photo" style="--v:2"><img src="./2.jpg" alt=""></div>
+    <div class="photo" style="--v:3"><img src="./3.jpg" alt=""></div>
+    <div class="photo" style="--v:4"><img src="./4.jpg" alt=""></div>
+    <div class="photo" style="--v:5"><img src="./5.jpg" alt=""></div>
+    <div class="photo" style="--v:6"><img src="./6.jpg" alt=""></div>
+    <div class="photo" style="--v:7"><img src="./7.jpg" alt=""></div>
+    <div class="photo" style="--v:8"><img src="./8.jpg" alt=""></div>
+  </div>
+
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.photo').click(function () {
+        if ($(this).hasClass('spin')) {
+          $('.photo').removeClass('spin')
+        } else {
+          $('.photo').removeClass('spin')
+          $(this).addClass('spin')
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

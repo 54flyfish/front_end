@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>居中方法1</title>
+  <style>
+    /* 利用父元素的弹性布局
+       并利用justify-content 水平居中
+       利用align-items 垂直居中(相对父元素的高度)
+    */
+    .box1 {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      background-color: #000;
+      border: 2px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box2 {
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1">
+    <div class="box2"></div>
+  </div>
+</body>
+
+</html>

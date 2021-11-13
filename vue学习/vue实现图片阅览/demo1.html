@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片转换器</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 500px;
+      height: 700px;
+      position: relative;
+    }
+
+    .prev {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50px;
+      height: 100%;
+      background-color: red;
+    }
+
+    #vm {
+      position: absolute;
+      left: 90px;
+      top: 0;
+      width: 320px;
+      height: 100%;
+      background-color: dodgerblue;
+    }
+
+    #vm img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .next {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50px;
+      height: 100%;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="vmt">
+    <div class="prev" @click="prev" v-show="num>1"></div>
+    <div id="vm">
+      <img :src="sou">
+    </div>
+    <div class="next" @click="next" v-show="3>num"></div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: "#vmt",
+      data: {
+        num: 1,
+        str: ".jpg",
+        sou: "1.jpg"
+      },
+      methods: {
+        prev: function () {
+          this.num--;
+          this.sou = this.num + this.str;
+        },
+        next: function () {
+          this.num++;
+          this.sou = this.num + this.str;
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

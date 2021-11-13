@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>原生计数器</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 200px;
+      height: 60px;
+      position: relative;
+    }
+
+    #sub {
+      position: absolute;
+      width: 60px;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-color: red;
+    }
+
+    #content {
+      position: absolute;
+      left: 70px;
+      height: 100%;
+      width: 60px;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 30px;
+    }
+
+    #add {
+      position: absolute;
+      width: 60px;
+      height: 100%;
+      right: 0;
+      top: 0;
+      background-color: dodgerblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="sub" onclick="sub()"></div>
+    <div id="content">0</div>
+    <div id="add" onclick="add()"></div>
+  </div>
+
+  <script>
+    var addd = function () {
+      let num = document.getElementById("content").innerHTML;
+      num++; return num;
+    };
+
+    var subb = function () {
+      let num = document.getElementById("content").innerHTML;
+      num--; return num;
+    };
+
+    function add() {
+      document.getElementById("content").innerHTML = addd();
+    }
+
+    function sub() {
+      document.getElementById("content").innerHTML = subb();
+    }
+
+  </script>
+</body>
+
+</html>

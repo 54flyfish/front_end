@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>居中方法2</title>
+  <style>
+    /* 通过定位
+       将父元素开启定位(relative,absolute,fixed,sticky)
+       然后通过top,left,transform等来使元素居中
+    */
+    .box1 {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      background-color: #000;
+      border: 2px solid red;
+      position: relative;
+    }
+
+    .box2 {
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      /* 下面几行将元素居于首个开启定位的祖先元素中间
+         若无则相对html根元素
+     */
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1">
+    <div class="box2"></div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>居中方法3</title>
+  <style>
+    .box1 {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      background-color: #000;
+      border: 2px solid red;
+      /* 父元素开启定位 */
+      position: relative;
+    }
+
+    .box2 {
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      /* 子元素开启绝对定位
+         脱离文档流，并将上下左右偏移量设为0
+         通过约束令子元素居中
+      */
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1">
+    <div class="box2"></div>
+  </div>
+</body>
+
+</html>
